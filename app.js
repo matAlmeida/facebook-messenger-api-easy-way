@@ -3,7 +3,7 @@
 const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
-const PAGE_ACESS_TOKEN = require('./constants');
+const PAGE_ACESS_TOKEN = require('./constants').PAGE_ACESS_TOKEN;
 
 const app = express();
 app.use(bodyParser.json());
