@@ -12,7 +12,7 @@ const sendText = (sender, text) => {
   request(
     {
       url: "https://graph.facebook.com/v3.3/me/messages",
-      qs: { access_token: config.PAGE_ACESS_TOKEN },
+      qs: { access_token: config.PAGE_ACCESS_TOKEN },
       method: "POST",
       json: {
         recipient: { id: sender },
@@ -37,7 +37,7 @@ const sendAttachment = (sender, attachmentUrl, attachmentType) => {
   request(
     {
       url: "https://graph.facebook.com/v3.3/me/messages",
-      qs: { access_token: PAGE_ACESS_TOKEN },
+      qs: { access_token: config.PAGE_ACCESS_TOKEN },
       method: "POST",
       json: {
         recipient: {

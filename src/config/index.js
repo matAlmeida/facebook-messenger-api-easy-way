@@ -2,7 +2,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const environment = ["PAGE_ACESS_TOKEN", "VERIFY_TOKEN", "PORT"];
+const environment = ["PAGE_ACCESS_TOKEN", "VERIFY_TOKEN", "PORT"];
 
 environment.forEach(name => {
   if (!process.env[name]) {
@@ -17,7 +17,7 @@ environment.forEach(name => {
 });
 
 module.exports = {
-  PAGE_ACESS_TOKEN: process.env.PAGE_ACESS_TOKEN,
+  PAGE_ACCESS_TOKEN: process.env.PAGE_ACCESS_TOKEN,
   VERIFY_TOKEN: process.env.VERIFY_TOKEN,
   PORT: process.env.PORT
 };
