@@ -1,12 +1,25 @@
 const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
+
 const config = require("./config");
+const privacyPolicy = require("./template/privacyPolicy");
+const termsOfService = require("./template/termsOfService");
 
 const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send("hello world!"));
+
+app.get("/privacyPolicy", (req, res) => {
+  res.set("Content-Type", "text/html");
+  res.send(privacyPolicy(config.APP_NAME, config.APP_SITE));
+});
+
+app.get("/tos", (req, res) => {
+  res.set("Content-Type", "text/html");
+  res.send(termsOfService(config.APP_NAME, config.APP_SITE));
+});
 
 const sendText = (sender, text) => {
   request(
